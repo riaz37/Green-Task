@@ -8,8 +8,7 @@ export function middleware(request: NextRequest) {
 
   // Paths that are public (no authentication required)
   const publicPaths = [
-    "/api/users/",   // User creation route
-   
+    "/api/users/", // User creation route
   ];
 
   // Check if the current path is public
@@ -45,7 +44,6 @@ export function middleware(request: NextRequest) {
       // If token is valid, allow the request to proceed
       return NextResponse.next();
     } catch (error) {
-      // Log the error for debugging purposes
       console.error("Token verification error:", error);
 
       // If token is invalid, return a forbidden response
